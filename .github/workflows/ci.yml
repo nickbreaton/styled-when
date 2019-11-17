@@ -1,12 +1,14 @@
-name: test
+name: CI
 
 on: [push]
 
 jobs:
-    build:
+    run:
         runs-on: ubuntu-latest
+        name: install, build, and test
         steps:
             - uses: actions/checkout@v1
             - uses: actions/setup-node@v1
             - run: yarn
+            - run: yarn build
             - run: yarn test
