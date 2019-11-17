@@ -14,11 +14,11 @@ Select when prop's value is truthy. Use for simple checks.
 
 ```js
 const Button = styled.button`
-  font-weight: normal;
+    font-weight: normal;
 
-  ${when('important')} {
-    font-weight: bold;
-  }
+    ${when('important')} {
+        font-weight: bold;
+    }
 `
 ```
 
@@ -28,14 +28,14 @@ Select when callback returns a truthy value. Use for more complex or multiple co
 
 ```jsx
 const Button = styled.button`
-  color: white;
-  background: cornflowerblue;
-  border: 1px solid cornflowerblue;
+    color: white;
+    background: cornflowerblue;
+    border: 1px solid cornflowerblue;
 
-  ${when(props => props.variant === 'secondary')} {
-    color: cornflowerblue;
-    background: white;
-  }
+    ${when(props => props.variant === 'secondary')} {
+        color: cornflowerblue;
+        background: white;
+    }
 `
 ```
 
@@ -45,12 +45,12 @@ Select when value is `true` or `false`. Use for constant conditions.
 
 ```jsx
 const Button = styled.button`
-  font-weight: regular;
+    font-weight: regular;
 
-  ${when(window.EMBEDDED_IN_ANDROID_APP)} {
-    font-weight: bold;
-    text-transform: uppercase;
-  }
+    ${when(window.EMBEDDED_IN_ANDROID_APP)} {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 `
 ```
 
