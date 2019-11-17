@@ -2,6 +2,8 @@
 
 Easily declare prop-based conditions when using styled components.
 
+Compatible with [styled-components](https://www.styled-components.com/) and [emotion](https://emotion.sh/docs/@emotion/styled).
+
 ## Install
 
 ```sh

@@ -1,70 +1,81 @@
 import React from 'react'
-import styled from 'styled-components'
 import { render } from '@testing-library/react'
+
+import sc, { ThemedBaseStyledInterface } from 'styled-components'
+import emotion from '@emotion/styled'
 
 import when from '../src'
 
-test('prop key', () => {
-    const Text = styled.span<{ strong?: boolean }>`
-        font-weight: regular;
+const libraries = [
+    { name: 'styled-components', styled: sc as any },
+    { name: 'emotion', styled: emotion as any },
+]
 
-        ${when('strong')} {
-            font-weight: bold;
-        }
-    `
+libraries.forEach(({ name, styled }: { name: string; styled: ThemedBaseStyledInterface<any> }) => {
+    describe(name, () => {
+        test('prop key', () => {
+            const Text = styled.span<{ strong?: boolean }>`
+                font-weight: regular;
 
-    const { getByText } = render(
-        <>
-            <Text>normal</Text>
-            <Text strong>strong</Text>
-        </>
-    )
+                ${when('strong')} {
+                    font-weight: bold;
+                }
+            `
 
-    const normal = getByText('normal')
-    const strong = getByText('strong')
+            const { getByText } = render(
+                <>
+                    <Text>normal</Text>
+                    <Text strong>strong</Text>
+                </>
+            )
 
-    expect(window.getComputedStyle(normal).fontWeight).toBe('regular')
-    expect(window.getComputedStyle(strong).fontWeight).toBe('bold')
-})
+            const normal = getByText('normal')
+            const strong = getByText('strong')
 
-test('prop callback', () => {
-    const Text = styled.span<{ strong?: boolean }>`
-        font-weight: regular;
+            expect(window.getComputedStyle(normal).fontWeight).toBe('regular')
+            expect(window.getComputedStyle(strong).fontWeight).toBe('bold')
+        })
 
-        ${when(props => props.strong)} {
-            font-weight: bold;
-        }
-    `
+        test('prop callback', () => {
+            const Text = styled.span<{ strong?: boolean }>`
+                font-weight: regular;
 
-    const { getByText } = render(
-        <>
-            <Text>normal</Text>
-            <Text strong>strong</Text>
-        </>
-    )
+                ${when(props => props.strong)} {
+                    font-weight: bold;
+                }
+            `
 
-    const normal = getByText('normal')
-    const strong = getByText('strong')
+            const { getByText } = render(
+                <>
+                    <Text>normal</Text>
+                    <Text strong>strong</Text>
+                </>
+            )
 
-    expect(window.getComputedStyle(normal).fontWeight).toBe('regular')
-    expect(window.getComputedStyle(strong).fontWeight).toBe('bold')
-})
+            const normal = getByText('normal')
+            const strong = getByText('strong')
 
-test('constant', () => {
-    const createTextComponent = ({ isEmbedded }: { isEmbedded: boolean }) => styled.span`
-        font-weight: regular;
+            expect(window.getComputedStyle(normal).fontWeight).toBe('regular')
+            expect(window.getComputedStyle(strong).fontWeight).toBe('bold')
+        })
 
-        ${when(isEmbedded)} {
-            font-weight: bold;
-        }
-    `
+        test('constant', () => {
+            const createTextComponent = ({ isEmbedded }: { isEmbedded: boolean }) => styled.span`
+                font-weight: regular;
 
-    const NoramlText = createTextComponent({ isEmbedded: false })
-    const normal = render(<NoramlText>normal</NoramlText>).getByText('normal')
+                ${when(isEmbedded)} {
+                    font-weight: bold;
+                }
+            `
 
-    const EmbedddText = createTextComponent({ isEmbedded: true })
-    const embedded = render(<EmbedddText>embedded</EmbedddText>).getByText('embedded')
+            const NoramlText = createTextComponent({ isEmbedded: false })
+            const normal = render(<NoramlText>normal</NoramlText>).getByText('normal')
 
-    expect(window.getComputedStyle(normal).fontWeight).toBe('regular')
-    expect(window.getComputedStyle(embedded).fontWeight).toBe('bold')
+            const EmbedddText = createTextComponent({ isEmbedded: true })
+            const embedded = render(<EmbedddText>embedded</EmbedddText>).getByText('embedded')
+
+            expect(window.getComputedStyle(normal).fontWeight).toBe('regular')
+            expect(window.getComputedStyle(embedded).fontWeight).toBe('bold')
+        })
+    })
 })
