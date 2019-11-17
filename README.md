@@ -13,6 +13,8 @@ npm i styled-when
 Select when prop's value is truthy. Use for simple checks.
 
 ```js
+import when from 'styled-when'
+
 const Button = styled.button`
     font-weight: normal;
 
@@ -27,6 +29,8 @@ const Button = styled.button`
 Select when callback returns a truthy value. Use for more complex or multiple conditions.
 
 ```jsx
+import when from 'styled-when'
+
 const Button = styled.button`
     color: white;
     background: cornflowerblue;
@@ -44,6 +48,8 @@ const Button = styled.button`
 Select when value is `true` or `false`. Use for constant conditions.
 
 ```jsx
+import when from 'styled-when'
+
 const Button = styled.button`
     font-weight: regular;
 
