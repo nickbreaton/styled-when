@@ -25,4 +25,5 @@ const when = <Props = any>(value: PropKey<Props> | PropCallback<Props> | boolean
     return parseCondition(value)
 }
 
+module.exports = when
 export default when
