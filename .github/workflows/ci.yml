@@ -1,11 +1,11 @@
-name: CI
+name: ci
 
 on: [push]
 
 jobs:
     run:
         runs-on: ubuntu-latest
-        name: install, build, and test
+        name: install, build, test
         steps:
             - uses: actions/checkout@v1
             - uses: actions/setup-node@v1

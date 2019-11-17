@@ -1,6 +1,6 @@
 # styled-when
 
-Create custom selectors from props when using tagged template literals to style React components.
+Easily declare prop-based conditions when using styled components.
 
 ## Install
 

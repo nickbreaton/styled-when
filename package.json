@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "license": "MIT",
   "author": "nickbreaton",
-  "description": "Create custom selectors from props when using tagged template literals to style React components.",
+  "description": "Easily declare prop-based conditions when using styled components.",
   "repository": {
     "type": "git",
     "url": "https://github.com/nickbreaton/styled-when"
