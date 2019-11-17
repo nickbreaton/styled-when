@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "nickbreaton",
+  "description": "Create custom selectors from props when using tagged template literals to style React components.",
   "main": "dist/index.js",
   "module": "dist/styled-when.esm.js",
   "typings": "dist/index.d.ts",
