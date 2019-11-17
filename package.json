@@ -1,6 +1,6 @@
 {
   "name": "styled-when",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "nickbreaton",
   "description": "Create custom selectors from props when using tagged template literals to style React components.",
