@@ -4,6 +4,17 @@
   "license": "MIT",
   "author": "nickbreaton",
   "description": "Easily declare prop-based conditions when using styled components.",
+  "keywords": [
+    "styled-components",
+    "emotion",
+    "condition",
+    "conditions",
+    "conditional",
+    "styled",
+    "components",
+    "react",
+    "css-in-js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/nickbreaton/styled-when"
