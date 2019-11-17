@@ -1,6 +1,6 @@
 {
   "name": "styled-when",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "author": "nickbreaton",
   "description": "Easily declare prop-based conditions when using styled components.",
