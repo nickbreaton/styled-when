@@ -1,5 +1,5 @@
-type PropCallback<Props> = (props: Props) => any
 type PropKey<Props> = keyof Props
+type PropCallback<Props> = (props: Props) => any
 
 const isPropKey = <Props>(value: unknown): value is PropKey<Props> => {
     return typeof value === 'string'
@@ -18,7 +18,7 @@ const when = <Props = any>(value: PropKey<Props> | PropCallback<Props> | boolean
         return (props: Props) => parseCondition(props[value])
     }
 
-    if (isPropCallback(value)) {
+    if (isPropCallback<Props>(value)) {
         return (props: Props) => parseCondition(value(props))
     }
 
