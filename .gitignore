@@ -1,0 +1,5 @@
+*.log
+.DS_Store
+.rts2_cache_*
+dist
+node_modules
