@@ -1,6 +1,6 @@
 {
     "name": "styled-when",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "license": "MIT",
     "author": "nickbreaton",
     "description": "Easily declare prop-based conditions when using styled components.",
@@ -20,6 +20,7 @@
         "url": "https://github.com/nickbreaton/styled-when"
     },
     "scripts": {
+        "prepublish": "yarn build",
         "prebuild": "rimraf dist/*",
         "build": "tsc",
         "test": "jest"
