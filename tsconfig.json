@@ -1,27 +1,17 @@
 {
-  "include": ["src", "types", "test"],
-  "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "lib": ["dom", "esnext"],
-    "importHelpers": true,
-    "declaration": true,
-    "sourceMap": true,
-    "rootDir": "./",
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "paths": {
-      "*": ["src/*", "node_modules/*"]
-    },
-    "jsx": "react",
-    "esModuleInterop": true
-  }
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.test.*"],
+    "compilerOptions": {
+        "baseUrl": "./",
+        "declaration": true,
+        "esModuleInterop": true,
+        "jsx": "react",
+        "lib": ["dom", "es5"],
+        "module": "commonjs",
+        "outDir": "./dist",
+        "rootDir": "./",
+        "sourceMap": true,
+        "strict": true,
+        "target": "es5"
+    }
 }
